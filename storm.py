@@ -72,7 +72,6 @@ antall_simuleringar = int(st.number_input("Kor mange simuleringar vil du gjennom
 
 resultater=[]
 
-st.write(tilbakelegging)
 #--- main run ----
 
 if st.button("Go!"):
