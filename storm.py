@@ -41,13 +41,9 @@ def trekk(antall=1):
       kulenr=randint(1,len(eske))
       if eske[kulenr-1]==1:
         raude = raude+1
-        resultatstreng=resultatstreng+" R"
-        #if antall_simuleringar<11:
-          #st.write("R",sep="") # return kulenr, "R"
+        resultatstreng=resultatstreng+" **:red[R]**"
       else:
-        resultatstreng=resultatstreng+" K"
-        #if antall_simuleringar<11:
-          #st.write("K",sep="") # return kulenr, "K"
+        resultatstreng=resultatstreng+" **:blue[B]**"
         kvite=kvite+1
   else:
     for i in range(antall):
@@ -55,12 +51,8 @@ def trekk(antall=1):
       if eske[kulenr-1]==1:
         raude = raude+1
         resultatstreng=resultatstreng+" **:red[R]**"
-        #if antall_simuleringar<11:
-          #st.write("R ",end="") # return kulenr, "R"
       else:
         resultatstreng=resultatstreng+" **:blue[B]**"
-        #if antall_simuleringar<11:
-          #st.write("K ",end="") # return kulenr, "K"
         kvite=kvite+1
       eske.pop(kulenr-1)
       
