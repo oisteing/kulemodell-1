@@ -2,7 +2,8 @@ import streamlit as st
 from random import *
 from statistics import *
 
-st.text("Kugle kugler online 1.0")
+st.title("Kugle kugler online 1.0")
+st.write("Denne webappen er basert på Kugle-1-2-3, som forklart i boka Stokastik. Programmet var ikkje å finne lenger, så eg laga ein web-versjon av det.")
 
 def gjennomsnitt(lst):
   return mean(lst)
@@ -14,7 +15,7 @@ def varians(lst):
   return(variance(lst))
 
 def skriv_regnskap(lst, modell):
-  st.text("-----")
+  st.divider()
   if len(lst)<150:
     st.text("Liste over resultat: ")
     st.text(lst)
@@ -34,27 +35,32 @@ def skriv_regnskap(lst, modell):
 def trekk(antall=1):
   global raude
   global kvite
+  global resultatstreng
   if tilbakelegging==True:
     for i in range(antall):
       kulenr=randint(1,len(eske))
       if eske[kulenr-1]==1:
         raude = raude+1
-        if antall_simuleringar<11:
-          st.write("R",sep="") # return kulenr, "R"
+        resultatstreng=resultatstreng+" R"
+        #if antall_simuleringar<11:
+          #st.write("R",sep="") # return kulenr, "R"
       else:
-        if antall_simuleringar<11:
-          st.write("K",sep="") # return kulenr, "K"
+        resultatstreng=resultatstreng+" K"
+        #if antall_simuleringar<11:
+          #st.write("K",sep="") # return kulenr, "K"
         kvite=kvite+1
   else:
     for i in range(antall):
       kulenr=randint(1,len(eske))
       if eske[kulenr-1]==1:
         raude = raude+1
-        if antall_simuleringar<11:
-          st.write("R ",end="") # return kulenr, "R"
+        resultatstreng=resultatstreng+" **:red[R]**"
+        #if antall_simuleringar<11:
+          #st.write("R ",end="") # return kulenr, "R"
       else:
-        if antall_simuleringar<11:
-          st.write("K ",end="") # return kulenr, "K"
+        resultatstreng=resultatstreng+" **:blue[B]**"
+        #if antall_simuleringar<11:
+          #st.write("K ",end="") # return kulenr, "K"
         kvite=kvite+1
       eske.pop(kulenr-1)
       
@@ -76,6 +82,7 @@ resultater=[]
 
 if st.button("Go!"):
     for j in range(antall_simuleringar):
+      resultatstreng=" "
       eske = []
       for i in range(kuler_i_esken):
         eske.append(0)
@@ -85,7 +92,7 @@ if st.button("Go!"):
       kvite=0
       trekk(antall_som_trekkes)
       if antall_simuleringar<11:
-        st.write(" ")
-        st.write("Totalt ", raude, "raude og", kvite, "kvite.")
+        st.markdown(resultatstreng)
+        st.write("Totalt ", raude, "raude og", kvite, "blå.")
       resultater.append(raude)
     skriv_regnskap(resultater, 1)
