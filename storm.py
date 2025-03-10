@@ -114,14 +114,14 @@ with tab2:
         eske.pop(kulenr-1)
         return False
   st.write("Denne modellen lar deg trekkje frå eska til du treffer på den første raude kula.")
-  kuler_i_esken2 = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, key=21))
-  raude_i_esken2 = int(st.number_input("Kor mange raude kuler er det? " ,min_value=1, key=22))
+  kuler_i_esken2 = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, value=100, key=21))
+  raude_i_esken2 = int(st.number_input("Kor mange raude kuler er det? " ,min_value=1, max_value=kuler_i_esken2, key=22))
   #attat2=st.text_input("Skal du kunne legge tilbake kula du har trukket ut? (j/n) ", placeholder="j")
   #if attat2=="j" or attat2=="J":
   #  tilbakelegging2=True
   #else:
   tilbakelegging2=False
-  antall_simuleringar2 = int(st.number_input("Kor mange simuleringar vil du gjennomføre? ", min_value=1, max_value=10000, key=23))
+  antall_simuleringar2 = int(st.number_input("Kor mange simuleringar vil du gjennomføre? ", min_value=1, max_value=10000, value=2, key=23))
   resultater2=[]
 
   if st.button("Go!"):
@@ -165,9 +165,9 @@ with tab3:
       eske.pop(kulenr-1)
       return False
 
-  kuler_i_esken3 = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, key=31))
-  raude_i_esken3 = int(st.number_input(f"Kor mange raude kuler er det? (Færre enn {kuler_i_esken3+1}) ",min_value=1, key=32))
-  antall_simuleringar3 = int(st.number_input("Kor mange simuleringar vil du gjere? ", key=33, min_value=1, max_value=10000))
+  kuler_i_esken3 = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, value=100, key=31))
+  raude_i_esken3 = int(st.number_input(f"Kor mange raude kuler er det? (Færre enn {kuler_i_esken3+1}) ",min_value=1, value=5, key=32))
+  antall_simuleringar3 = int(st.number_input("Kor mange simuleringar vil du gjere? ", key=33, min_value=1, value=2, max_value=10000))
   resultater3=[]
 
   if st.button("Go!", key=3):
