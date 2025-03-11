@@ -64,7 +64,7 @@ with tab1:
   
   kuler_i_esken = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, value=6))
   raude_i_esken = int(st.number_input("Kor mange raude kuler er det? ", min_value=1, max_value=kuler_i_esken))
-  antall_som_trekkes = int(st.number_input("Kor mange skal trekkjast ut kvar gong? ", min_value=1, max_value=kuler_i_esken, value=6))
+  antall_som_trekkes = int(st.number_input("Kor mange skal trekkjast ut kvar gong? ", min_value=1, value=6))
   attat=st.text_input("Skal du kunne legge tilbake kula du har trukket ut? (j/n) ", key=1, value="j")
   if attat=="j" or attat=="J":
     tilbakelegging=True
