@@ -62,15 +62,15 @@ tab1, tab2, tab3 = st.tabs(["Modell 1", "Modell 2", "Modell 3"])
 with tab1:
   st.text("Denne modellen lar deg legge eit antal raude og blå kuler i ei eske, for så å trekkje ut eit visst antal. Dette kan gjentakast fleire gonger.")
   
-  kuler_i_esken = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, value=6))
-  raude_i_esken = int(st.number_input("Kor mange raude kuler er det? ", min_value=1, max_value=kuler_i_esken))
+  kuler_i_esken = int(st.number_input("Kor mange kuler er det i esken? (1-10000) ", min_value=1, max_value=10000, value=6))
+  raude_i_esken = int(st.number_input("Kor mange raude kuler er det? ", min_value=1, value=1, max_value=kuler_i_esken))
   antall_som_trekkes = int(st.number_input("Kor mange skal trekkjast ut kvar gong? ", min_value=1, value=6))
   attat=st.text_input("Skal du kunne legge tilbake kula du har trukket ut? (j/n) ", key=1, value="j")
   if attat=="j" or attat=="J":
     tilbakelegging=True
   else:
     tilbakelegging=False
-  antall_simuleringar = int(st.number_input("Kor mange simuleringar vil du gjennomføre? ", min_value=1, max_value=10000, value=10))
+  antall_simuleringar = int(st.number_input("Kor mange simuleringar vil du gjennomføre? (1-10000)", min_value=1, max_value=10000, value=10))
   resultater=[]
 
   if st.button("Go!", key=2):
@@ -146,21 +146,13 @@ with tab2:
     skriv_regnskap(resultater2, 2, antall_simuleringar2)
  
 
-  # Data for plotting
-
-  #kat=[]
-  #val=[]
-  #for k in range(len(resultater)):
-  #      a = sum(1 for i in resultater if i  == k)
-  ##      kat.append(k)
-  #      val.append(a)
-  
 with tab3:
   st.write("Modell tre lar deg trekkje frå eska til alle raude er trekt ut.")
   
   def trekk3():
     kulenr=randint(1,len(eske))
     if eske[kulenr-1]==1:
+      eske.pop(kulenr-1)
       return True
     else:
       eske.pop(kulenr-1)
@@ -174,26 +166,30 @@ with tab3:
   if st.button("Go!", key=3):
     for i in range(antall_simuleringar3):
       resultatstreng3=""
-      tell_raude=1
-      antall_trekk=1
-      eske = []
+      tell_raude=0
+      antall_trekk=0
+      eske = [] #setter opp eska
       for k in range(kuler_i_esken3):
         eske.append(0)
+      
       for j in range(raude_i_esken3):
         eske[j]=eske[j]+1
+      
 
       while tell_raude<raude_i_esken3:
         if trekk3():
           tell_raude=tell_raude+1
           resultatstreng3=resultatstreng3+" **:red[R ]**"
+          
         else:
           resultatstreng3=resultatstreng3+" **:blue[B]**"
+          
         antall_trekk=antall_trekk+1
 
       resultater3.append(antall_trekk)
-      resultatstreng3=resultatstreng3 + " **:red[R]**"
+      
       if antall_simuleringar3<20:
         st.write(resultatstreng3)
-        st.write("Du måtte trekke",antall_trekk, "gongar for å trekkje alle dei ", raude_i_esken3, "raude.") 
+        st.write(f"Du måtte trekke {antall_trekk} gongar for å trekkje alle dei {raude_i_esken3} raude.") 
     
     skriv_regnskap(resultater3, 3, antall_simuleringar3)
