@@ -141,7 +141,8 @@ with tab2:
       if antall_simuleringar2<30:
         resultatstreng2=resultatstreng2+" **:red[R]**"
         st.write(resultatstreng2)
-
+        if antall_simuleringar2<20:
+          st.write("Du måtte trekke",teller, "gongar før du fekk den første raude.")
     skriv_regnskap(resultater2, 2, antall_simuleringar2)
  
 
@@ -193,6 +194,6 @@ with tab3:
       resultatstreng3=resultatstreng3 + " **:red[R]**"
       if antall_simuleringar3<20:
         st.write(resultatstreng3)
-        st.write("Du måtte trekke",antall_trekk, "gongar.")
-        st.write("")
+        st.write("Du måtte trekke",antall_trekk, "gongar for å trekkje alle dei ", raude_i_esken3, "raude.") 
+    
     skriv_regnskap(resultater3, 3, antall_simuleringar3)
