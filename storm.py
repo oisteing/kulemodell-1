@@ -2,6 +2,7 @@ import streamlit as st
 from random import *
 from statistics import *
 
+st.logo("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXL74BGleH6oFgRBkKovXDFNTb0h5U46mhnQ&s", link="https://www.github.com")
 st.title("Kugle kugler online 1.0")
 st.write("Denne webappen er basert på Kugle-1-2-3, som forklart i boka Stokastik. Programmet var ikkje å finne lenger, så eg laga ein web-versjon av det.")
 
