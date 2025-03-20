@@ -95,11 +95,11 @@ with tab1:
           resultater.append(raude)
         skriv_regnskap(resultater, 1, antall_simuleringar)
 
-        kat=[]
+        #kat=[]
         val=[]
         for k in range(antall_som_trekkes+1):
           a = sum(1 for i in resultater if i  == k) 
-          kat.append(k)
+          #kat.append(k)
           val.append(a)
         st.bar_chart(val, x_label="Antal raude", y_label="Antal gongar", )
 
@@ -146,11 +146,11 @@ with tab2:
           st.write("Du måtte trekkje",teller, "gongar før du fekk den første raude kula.")
     skriv_regnskap(resultater2, 2, antall_simuleringar2)
     
-    kat=[]
+    #kat=[]
     val=[]
     for k in range(max(resultater2)+1):
         a = sum(1 for i in resultater2 if i  == k) 
-        kat.append(k)
+        #kat.append(k)
         val.append(a)
     
     st.bar_chart(val, x_label="Kor mange gongar måtte du trekkje", y_label="Antal gongar", )
