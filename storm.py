@@ -7,7 +7,7 @@ translations = {
     "Nynorsk": {
         "go": "Køyr",
         "modell": "Modell",
-        "intro": "Denne webappen er basert på Kugle123, som er presentert i boka Stokastik (Samfundsliteratur). Programmet var kun å finne for PC, så eg laga ein web-versjon av det.",
+        "intro": "Denne webappen er basert på Kugle123 frå infa.dk, som er presentert i boka Stokastik (Samfundsliteratur). Programmet var kun å finne for PC, så eg laga ein web-versjon av det.",
         "tittel": "Kugle kugler  :sunglasses: nline 1.0",
         "typetal": "Typetal",
         "gjennomsnitt": "Gjennomsnitt", 
@@ -38,7 +38,7 @@ translations = {
     "Bokmål": {
         "go": "Kjør",
         "modell": "Modell",
-        "intro": "Denne webappen er basert på Kugle123, som er presentert i boka Stokastik (Samfundsliteratur). Programmet eksisterte kun for PC, så jeg laget en web-versjon av det.",
+        "intro": "Denne webappen er basert på Kugle123 fra infa.dk, som er presentert i boka Stokastik (Samfundsliteratur). Programmet eksisterte kun for PC, så jeg laget en web-versjon av det.",
         "tittel": "Kule kuler",
         "typetal": "Typetall",
         "gjennomsnitt": "Gjennomsnitt",
@@ -69,7 +69,7 @@ translations = {
     "English": {
         "go": "Go!",
         "modell": "Model",
-        "intro": "This webapp is based on Kugle123, introduced in the book Stokastik (Samfundsliteratur). This product was only available for PC, so I made a web-based version.",
+        "intro": "This webapp is based on Kugle123 from infa.dk, introduced in the book Stokastik (Samfundsliteratur). This product was only available for PC, so I made a web-based version.",
         "tittel": "C:sunglasses: :sunglasses: lbeans ",
         "typetal": "Mode", 
         "gjennomsnitt": "Average (Mean)",
